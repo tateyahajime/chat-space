@@ -2,13 +2,14 @@
   .chat-side__header
     .chat-side__header-name-area
       .side__name
-        masa
+        = current_user.name
       .side__icons
         =link_to "#" do
           = icon('fas', 'edit', class: "side__icons-color")
           
-        =link_to "#" do
+        =link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: "side__icons-color")
+        
   .chat-side__message-box
     .box__null
     .box__name
