@@ -4,7 +4,7 @@
       .side__name
         = current_user.name
       .side__icons
-        =link_to "#" do
+        =link_to new_group_path do
           = icon('fas', 'edit', class: "side__icons-color")
           
         =link_to edit_user_path(current_user) do
@@ -13,8 +13,19 @@
   .chat-side__message-box
     .box__null
     .box__name
-      techcamp
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do 
+          = group.name 
     .box__null2
     .box__message
       まだメッセージはありません
     .box__null3
+
+  -# .chat-side__message-box
+  -#   .box__null
+  -#   .box__name
+  -#     techcamp
+  -#   .box__null2
+  -#   .box__message
+  -#     まだメッセージはありません
+  -#   .box__null3
