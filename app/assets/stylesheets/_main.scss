@@ -44,7 +44,6 @@
     width: calc( 100vw - 300px);
     background-color: #fafafa;
     &-message {
-      padding: 30px 0 0 40px;
       height: 123px;
       &-name {
         color: #333333;
@@ -59,8 +58,8 @@
         margin-left: 10px;
       }
       &-text {
-        height: 60px;
-        margin-top: 28px;
+        // height: 60px;
+        // margin-top: 28px;
         font-size: 14px;
         color: #434A54;
         font-weight: bold;
@@ -68,29 +67,66 @@
       }
     }
   }
+
+  .message {
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    padding: 46px 40px 0;
+    // height: calc(100vh - 190px);
+    overflow: auto;
+    .message {
+      .upper-message {
+        display: flex;
+        &user-name {
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+      &date {
+        color: #999;
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
+    .lower-message {
+      margin-top: 10px;
+      &__content {
+        color: #434a54;
+        font-size: 14px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  }
   
   &__bottom {
     width: calc( 100vw - 300px);
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px;
-    display: flex;
     justify-content: space-between;
     &-area {
-      width: 100vw;
-      height: 50px;
-      background-color: #ffffff;
-      padding: 0 10px 0 10px;
-      line-height: 50px;
-      color: #999999;
+      position: relative;
       float: left;
-      &-image {
-        padding-right: 10px;
+      width: calc( 100vw - 510px);
+      
+      &-text {
+        float: left;
+        height: 50px;
+        width: 100%;
+        padding: 0 40px 0 10px;
+        color: #434a54;
+        border-style: none;
+      }
+      &-image-label {
         float: right;
-        line-height: 50px;
+        font-size: 1.3rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
         .hidden {
           display: none;
-
         }
         &-icon {
           color: black;
@@ -99,17 +135,20 @@
       }
     }
     &-text-send {
-      background-color: #38aef0;
-      float: right;
-      height: 50px;
-      line-height: 50px;
-      text-align: center;
-      margin-left: 15px;
-      padding: 0 30px;
       &-link {
         text-decoration: none;
         color: #ffffff;
+        background-color: #38aef0;
+        float: right;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        margin-left: 15px;
+        padding: 0 30px;
       }
     }
   }
 }
+
+
+  
