@@ -49,7 +49,9 @@
       font-size: 15px;
       line-height: 15px;
       font-weight: bold;
-      color: #ffffff;
+      &-color {
+        color: #ffffff;
+      }
     }
     .box__null2 {
       height: 5px;

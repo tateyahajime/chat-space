@@ -10,22 +10,14 @@
         =link_to edit_user_path(current_user) do
           = icon('fas', 'cog', class: "side__icons-color")
         
-  .chat-side__message-box
-    .box__null
-    .box__name
-      - current_user.groups.each do |group|
-        = link_to group_messages_path(group) do 
-          = group.name 
-    .box__null2
-    .box__message
-      まだメッセージはありません
-    .box__null3
-
-  -# .chat-side__message-box
-  -#   .box__null
-  -#   .box__name
-  -#     techcamp
-  -#   .box__null2
-  -#   .box__message
-  -#     まだメッセージはありません
-  -#   .box__null3
+  - current_user.groups.each do |group|
+    .chat-side__message-box
+      .box__null
+        .box__name
+          = link_to group_messages_path (group) do
+            .box__name-color
+              = group.name 
+      .box__message
+        = group.show_last_message
+      .box__null2
+      .box__null3

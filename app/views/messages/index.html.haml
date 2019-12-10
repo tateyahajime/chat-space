@@ -1,5 +1,27 @@
 .wrapper
   = render "side_bar"
-  = render "main_chat"
-
+  .main
+    .main__header
+      .main__header-left
+        = link_to group_messages_path (@group) do
+          .main__header-left-top
+            = @group.name
+          .main__header-left-bottom
+            = current_user.name
+      .main__header-right
+        = link_to 'Edit', edit_group_path(@group), class: "main__header-right-btn"
+    .main__center
+      .main__center-message
+        .main__center-message-text
+          .messages
+            = render partial: 'message', collection: @messages
   
+    .main__bottom
+      = form_for [@group, @message] do |f|
+        .main__bottom-area
+          = f.text_field :content, class: "main__bottom-area-text", placeholder: "type a message"
+          = f.label :image, class: "main__bottom-area-image-label" do 
+            = icon('far', 'image', class: "main__bottom-area-image-icon")
+            = f.file_field :image, class: "hidden"
+        .main__bottom-text-send
+          = f.submit 'Send', class: "main__bottom-text-send-link" 
