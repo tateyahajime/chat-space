@@ -3,11 +3,11 @@
   .main
     .main__header
       .main__header-left
-        = link_to group_messages_path (@group) do
-          .main__header-left-top
-            = @group.name
-          .main__header-left-bottom
-            = current_user.name
+        
+        .main__header-left-top
+          = @group.name
+        .main__header-left-bottom
+          = current_user.name
       .main__header-right
         = link_to 'Edit', edit_group_path(@group), class: "main__header-right-btn"
     .main__center
