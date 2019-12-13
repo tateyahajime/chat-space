@@ -25,7 +25,7 @@ $(function() {
                       <div class="upper-message__user-name">
                         ${ message.name}  
                       </div>
-                      <div class="upper-message__date">
+                      <div class="upper-message__data">
                         ${ message.created_at}
                       </div>
                       </div>
